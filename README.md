@@ -1,2 +1,2 @@
-# info2180-project1
-Project 1 for info2180
+# INfo2180 Project 1
+Project 1 for iGavdin Seaton
