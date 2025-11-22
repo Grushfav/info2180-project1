@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-size: 16px;
-  font-family: "Segoe UI", sans-serif;
+  font-size: 18px; /* default font size */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
 .container {
@@ -23,7 +23,7 @@ header .container {
 }
 
 header h1 {
-  font-size: 24px;
+  font-size: 18px;
   color: #2d3748;
   margin: 0;
 }
@@ -40,6 +40,7 @@ nav ul li a {
   text-decoration: none;
   color: #6b7280;
   font-weight: 500;
+  font-size: 18px;
   padding: 8px 0;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
@@ -60,7 +61,7 @@ section.overview-hero .container {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* image left, text follows */
-  gap: 40px;
+  gap: 20px;
   flex-wrap: wrap; /* allow stacking on very small screens */
 }
 
@@ -78,8 +79,9 @@ section.overview-hero .container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* align text block to the right */
-  text-align: right;
+  align-items: flex-start; /* align text block to the right */
+  text-align: left;
+  padding-left: 15px;
 }
 
 .overview-hero-text h2 {
@@ -101,7 +103,7 @@ section.learn-about {
 }
 
 .learn-about h2 {
-  font-size: 28px;
+  font-size: 24px;
   color: #48BB78;
   text-align: left;
   margin-bottom: 40px;
@@ -122,8 +124,8 @@ section.learn-about {
 .card {
   background-color: #f9fafb;
   border: 1px solid #E2E8F0;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 5px; /* rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* slight shadow */
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -196,7 +198,6 @@ section.testing {
 
 .btn {
   display: inline-block;
-  background-color: #48BB78; /* green */
   color: white;
   padding: 12px 24px;
   border-radius: 5px;
@@ -205,8 +206,21 @@ section.testing {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #38a169; /* darker green on hover */
+/* scoped button colors to avoid global overwrites */
+.testing .btn {
+  background-color: #48BB78;
+}
+.testing .btn:hover {
+  background-color: #38a169;
+}
+
+.newsletter .btn,
+.newsletter button.btn {
+  background-color: #5A67D8;
+}
+.newsletter .btn:hover,
+.newsletter button.btn:hover {
+  background-color: #434190;
 }
 
 section.stories {
@@ -217,7 +231,7 @@ section.stories {
 .stories h2 {
   font-size: 28px;
   color: #5A67D8;
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -233,6 +247,14 @@ section.stories {
   height: 120px;
   border-radius: 50%; /* circular image */
   background-color: #e2e8f0; /* placeholder background */
+  object-fit: cover; /* crop to fill square, then border-radius makes it circular */
+  display: block;
+  flex: 0 0 120px; /* fixed size in the flex layout */
+  align-self: flex-start; /* ensure image top aligns with text top */
+}
+
+.article-body {
+  flex: 1; /* allow body to take remaining width and keep consistent alignment */
 }
 
 .article-body h3 {
@@ -289,23 +311,20 @@ form {
   width: 250px;
 }
 
-.btn {
-  background-color: #5A67D8;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.btn:hover {
-  background-color: #434190;
-}
 
 .message {
   margin-top: 20px;
   font-size: 16px;
+}
+
+footer {
+  background-color: #4A5568;
+  color: white;
+  padding: 20px 0;
+}
+
+footer .container p {
+  margin: 0;
 }
 
