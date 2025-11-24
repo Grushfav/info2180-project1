@@ -52,17 +52,17 @@ nav ul li a.active {
 }
 
 section.overview-hero {
-  background-color: #E2E8F0; /* light blue */
+  background-color: #E2E8F0; 
   padding: 60px 0;
 }
 
-/* target the .container inside the overview section (common markup pattern) */
+
 section.overview-hero .container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* image left, text follows */
+  justify-content: flex-start;
   gap: 20px;
-  flex-wrap: wrap; /* allow stacking on very small screens */
+  flex-wrap: wrap;
 }
 
 .overview-hero-image {
@@ -79,7 +79,7 @@ section.overview-hero .container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* align text block to the right */
+  align-items: flex-start; 
   text-align: left;
   padding-left: 15px;
 }
@@ -114,10 +114,12 @@ section.learn-about {
   grid-template-columns: repeat(3, 1fr); /* desktop: 3 columns */
   gap: 30px;
 }
-
+/* cross platform responsive and grid css */
 @media (max-width: 900px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /*grid-template-columns: repeat(3, 1fr);*/
+
   }
 }
 
@@ -159,7 +161,7 @@ section.learn-about {
 }
 
 section.testing {
-  background-color: #4A5568; /* dark blue-gray */
+  background-color: #4A5568; 
   color: white;
   padding: 60px 0;
 }
@@ -206,7 +208,7 @@ section.testing {
   transition: background-color 0.3s ease;
 }
 
-/* scoped button colors to avoid global overwrites */
+
 .testing .btn {
   background-color: #48BB78;
 }
@@ -245,16 +247,16 @@ section.stories {
 .stories article img {
   width: 120px;
   height: 120px;
-  border-radius: 50%; /* circular image */
-  background-color: #e2e8f0; /* placeholder background */
-  object-fit: cover; /* crop to fill square, then border-radius makes it circular */
+  border-radius: 50%; 
+  background-color: #e2e8f0; 
+  object-fit: cover; 
   display: block;
-  flex: 0 0 120px; /* fixed size in the flex layout */
-  align-self: flex-start; /* ensure image top aligns with text top */
+  flex: 0 0 120px; 
+  align-self: flex-start;  */
 }
 
 .article-body {
-  flex: 1; /* allow body to take remaining width and keep consistent alignment */
+  flex: 1;
 }
 
 .article-body h3 {
